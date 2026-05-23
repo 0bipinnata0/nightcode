@@ -2,6 +2,7 @@
   "name": "@nightcode/cli",
   "type": "module",
   "scripts": {
+    "build": "bun build src/index.tsx --outdir dist --target bun",
     "dev": "bun --watch run src/index.tsx",
     "start": "bun run src/index.tsx",
     "typecheck": "bunx tsc --project tsconfig.json --noEmit"

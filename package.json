@@ -7,6 +7,7 @@
     "cli"
   ],
   "scripts": {
+    "build": "bun run --filter @nightcode/server build && bun run --filter @nightcode/cli build",
     "dev:server": "bun run --filter @nightcode/server dev",
     "dev:cli": "bun run --filter @nightcode/cli dev",
     "start:server": "bun run --filter @nightcode/server start",
