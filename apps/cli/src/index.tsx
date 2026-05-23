@@ -1,5 +1,6 @@
 import { createCliRenderer } from "@opentui/core";
 import { createRoot } from "@opentui/react";
+import { createWelcomeMessage, projectDescription, projectName } from "@nightcode/shared";
 
 function App() {
   return (
@@ -12,14 +13,16 @@ function App() {
       padding={2}
       backgroundColor="#111827"
     >
-      <ascii-font text="Nightcode" font="block" color="#7dd3fc" />
+      <ascii-font text={projectName} font="block" color="#7dd3fc" />
       <box marginTop={1} border borderColor="#38bdf8" paddingX={2} paddingY={1}>
         <text fg="#e5e7eb">
-          <strong>Welcome to the Bun workspace monorepo.</strong>
+          <strong>{createWelcomeMessage("cli")}</strong>
         </text>
       </box>
       <box marginTop={1}>
         <text fg="#94a3b8">
+          {projectDescription}
+          <br />
           Server: <span fg="#86efac">Hono on Bun</span>
           <br />
           CLI: <span fg="#c4b5fd">OpenTUI React</span>
