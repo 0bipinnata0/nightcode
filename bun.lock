@@ -12,6 +12,7 @@
     "apps/cli": {
       "name": "@nightcode/cli",
       "dependencies": {
+        "@nightcode/shared": "workspace:*",
         "@opentui/core": "latest",
         "@opentui/react": "latest",
         "react": ">=19.0.0",
@@ -25,8 +26,16 @@
     "apps/server": {
       "name": "@nightcode/server",
       "dependencies": {
+        "@nightcode/shared": "workspace:*",
         "hono": "latest",
       },
+      "devDependencies": {
+        "@types/bun": "latest",
+        "typescript": "latest",
+      },
+    },
+    "packages/shared": {
+      "name": "@nightcode/shared",
       "devDependencies": {
         "@types/bun": "latest",
         "typescript": "latest",
@@ -37,6 +46,8 @@
     "@nightcode/cli": ["@nightcode/cli@workspace:apps/cli"],
 
     "@nightcode/server": ["@nightcode/server@workspace:apps/server"],
+
+    "@nightcode/shared": ["@nightcode/shared@workspace:packages/shared"],
 
     "@opentui/core": ["@opentui/core@0.2.15", "", { "dependencies": { "bun-ffi-structs": "0.2.2", "diff": "9.0.0", "marked": "17.0.1", "string-width": "7.2.0", "strip-ansi": "7.1.2", "yoga-layout": "3.2.1" }, "optionalDependencies": { "@opentui/core-darwin-arm64": "0.2.15", "@opentui/core-darwin-x64": "0.2.15", "@opentui/core-linux-arm64": "0.2.15", "@opentui/core-linux-x64": "0.2.15", "@opentui/core-win32-arm64": "0.2.15", "@opentui/core-win32-x64": "0.2.15" }, "peerDependencies": { "web-tree-sitter": "0.25.10" } }, "sha512-YGHttdZWScMcSvtYgZkLR6VhUO1OoUiQzwYjZgIusf5eCkPLD8PapH+PTMVqAiX16CHO6JxfMlkHv5qDiHAccQ=="],
 

@@ -8,6 +8,7 @@
     "typecheck": "bunx tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@nightcode/shared": "workspace:*",
     "hono": "latest"
   },
   "devDependencies": {
