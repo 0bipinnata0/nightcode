@@ -7,10 +7,16 @@
       "DOM"
     ],
     "rootDir": "./src",
+    "outDir": "./dist",
     "jsx": "react-jsx",
     "jsxImportSource": "@opentui/react"
   },
   "include": [
     "src/**/*"
+  ],
+  "references": [
+    {
+      "path": "../../packages/shared"
+    }
   ]
 }

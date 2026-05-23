@@ -5,9 +5,15 @@
     "lib": [
       "ESNext"
     ],
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "outDir": "./dist"
   },
   "include": [
     "src/**/*"
+  ],
+  "references": [
+    {
+      "path": "../../packages/shared"
+    }
   ]
 }

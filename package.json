@@ -12,7 +12,7 @@
     "dev:cli": "bun run --cwd apps/cli dev",
     "start:server": "bun run --filter @nightcode/server start",
     "start:cli": "bun run --cwd apps/cli start",
-    "typecheck": "bunx tsc --build --noEmit"
+    "typecheck": "bunx tsc --build"
   },
   "devDependencies": {
     "@types/bun": "latest",
