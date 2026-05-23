@@ -1,0 +1,20 @@
+{
+  "name": "nightcode",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "server",
+    "cli"
+  ],
+  "scripts": {
+    "dev:server": "bun run --filter @nightcode/server dev",
+    "dev:cli": "bun run --filter @nightcode/cli dev",
+    "start:server": "bun run --filter @nightcode/server start",
+    "start:cli": "bun run --filter @nightcode/cli start",
+    "typecheck": "bunx tsc --build --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "latest"
+  }
+}
