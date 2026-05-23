@@ -1,10 +1,13 @@
 import { Hono } from "hono";
+import { createWelcomeMessage, projectDescription, projectName } from "@nightcode/shared";
 
 export const app = new Hono();
 
 app.get("/", (context) => {
   return context.json({
-    message: "Welcome to Nightcode server",
+    message: createWelcomeMessage("server"),
+    name: projectName,
+    description: projectDescription,
     service: "@nightcode/server",
   });
 });
