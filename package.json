@@ -3,15 +3,15 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "server",
-    "cli"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
     "build": "bun run --filter @nightcode/server build && bun run --filter @nightcode/cli build",
     "dev:server": "bun run --filter @nightcode/server dev",
-    "dev:cli": "bun run --cwd cli dev",
+    "dev:cli": "bun run --cwd apps/cli dev",
     "start:server": "bun run --filter @nightcode/server start",
-    "start:cli": "bun run --cwd cli start",
+    "start:cli": "bun run --cwd apps/cli start",
     "typecheck": "bunx tsc --build --noEmit"
   },
   "devDependencies": {
