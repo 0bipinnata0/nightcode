@@ -1,6 +1,6 @@
 import { projectDescription } from "@nightcode/shared";
-import { HomeBanner } from "../components/home-banner.js";
-import { HomePrompt } from "../components/home-prompt.js";
+import { HomeBanner } from "../components/home-banner";
+import { HomePrompt } from "../components/home-prompt";
 
 export function HomeScreen() {
   return (
