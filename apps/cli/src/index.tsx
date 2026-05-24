@@ -1,6 +1,8 @@
 import { createCliRenderer } from "@opentui/core";
 import { createRoot } from "@opentui/react";
-import { createWelcomeMessage, projectDescription, projectName } from "@nightcode/shared";
+import { projectDescription, projectName } from "@nightcode/shared";
+import { HomeBanner } from "./components/home-banner.js";
+import { HomePrompt } from "./components/home-prompt.js";
 
 function App() {
   return (
@@ -13,10 +15,11 @@ function App() {
       padding={2}
       backgroundColor="#111827"
     >
-      <ascii-font text={projectName} font="block" color="#7dd3fc" />
+      <HomeBanner title={projectName} />
+      <HomePrompt />
       <box marginTop={1} border borderColor="#38bdf8" paddingX={2} paddingY={1}>
         <text fg="#e5e7eb">
-          <strong>{createWelcomeMessage("cli")}</strong>
+          <strong>Ready for agentic development.</strong>
         </text>
       </box>
       <box marginTop={1}>
