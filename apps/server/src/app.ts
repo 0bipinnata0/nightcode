@@ -12,7 +12,7 @@ export const app = new Hono()
   })
   .get("/health", (context) => {
     return context.json({
-      ok: true,
+      status: "healthy",
       runtime: "bun",
     });
   });
