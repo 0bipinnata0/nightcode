@@ -30,3 +30,33 @@ Non-interactive scripts such as `build` can still use `--filter` because they do
 Use kebab-case for source file names. Keep exported TypeScript symbols in the idiomatic casing for their role, such as PascalCase for React/OpenTUI components and camelCase for functions and values.
 
 Keep runnable app entrypoints thin. Put screen-level composition in `screens/` and reusable UI pieces in `components/`; do not leave components scattered directly in a `src/` root. Avoid writing long static file trees in this document unless the structure itself is the subject of the guidance.
+
+## Server-Client Communication (RPC)
+
+Whenever possible, API requests between the server and the CLI app should use Hono's RPC client (`hc`).
+
+Guidelines:
+- **Routes chaining**: Keep routes chained in the server (`apps/server/src/app.ts`) to ensure the client can properly infer the route types.
+- **Type-safe responses**: Use discriminated unions (e.g., `{ success: true, data: any } | { success: false, error: string }`) for endpoint returns. This allows TypeScript to automatically narrow down response structures on the client side without needing unsafe type assertions (such as `as any`).
+- **Request body validation**: Prefer Hono's zod validator (`@hono/zod-validator`) for request body validation instead of hand-rolled parsing.
+
+## Input and State Validation
+
+Do not use unsafe type assertions (such as `as any` or type-casting) for dynamic, runtime-received data like React Router's location state. Instead, prioritize using Zod schemas to validate their structure at runtime to guarantee type safety.
+
+## Commit message format
+
+Use Conventional Commits with the following rules:
+
+```
+type(scope,scope): description in imperative mood
+
+- What changed and why, one bullet per logical change
+- Keep bullets concise and factual
+```
+
+Guidelines:
+- **type**: `feat`, `fix`, `refactor`, `chore`, `docs`, `test`, etc.
+- **scope**: comma-separated list of affected scopes (e.g., `server`, `cli`, `shared`). Omit if the change is repo-wide.
+- **description**: lowercase, no trailing period, imperative mood (e.g., "add health endpoint", not "added").
+- **body**: Bullet list of specific changes. Skip for trivial single-line fixes.

@@ -11,8 +11,12 @@
     "typecheck": "bunx tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "3.0.80",
+    "@hono/zod-validator": "^0.8.0",
     "@nightcode/shared": "workspace:*",
-    "hono": "latest"
+    "ai": "6.0.193",
+    "hono": "latest",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/bun": "latest",

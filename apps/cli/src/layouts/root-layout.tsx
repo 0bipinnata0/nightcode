@@ -13,8 +13,6 @@ export function RootLayout() {
 
   useKeyboard((event: KeyEvent) => {
     if (event.name === "1") navigate("/");
-    if (event.name === "2") navigate("/about");
-    if (event.name === "3") navigate("/settings");
     if (event.name === "q") renderer.destroy();
   });
 
@@ -55,24 +53,6 @@ export function RootLayout() {
           }
         >
           [1] Home
-        </text>
-        <text
-          attributes={
-            location.pathname === "/about"
-              ? TextAttributes.BOLD | TextAttributes.UNDERLINE
-              : TextAttributes.NONE
-          }
-        >
-          [2] About
-        </text>
-        <text
-          attributes={
-            location.pathname === "/settings"
-              ? TextAttributes.BOLD | TextAttributes.UNDERLINE
-              : TextAttributes.NONE
-          }
-        >
-          [3] Settings
         </text>
         <text attributes={TextAttributes.DIM}>[q] Quit</text>
       </box>

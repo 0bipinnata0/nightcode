@@ -1,4 +1,23 @@
+import { useNavigate } from "react-router";
+import { useRef } from "react";
+
+const textareaKeyBindings = [
+  { name: "return", action: "submit" as const },
+  { name: "kpenter", action: "submit" as const },
+  { name: "linefeed", action: "submit" as const },
+  { name: "return", shift: true, action: "newline" as const },
+  { name: "kpenter", shift: true, action: "newline" as const },
+];
+
 export function HomePrompt() {
+  const navigate = useNavigate();
+  const textareaRef = useRef<any>(null);
+
+  const handleSubmit = () => {
+    const text = textareaRef.current?.plainText || "";
+    navigate("/chat", { state: { text } });
+  };
+
   return (
     <box
       flexDirection="column"
@@ -16,13 +35,17 @@ export function HomePrompt() {
       </text>
       <box marginTop={1}>
         <textarea
+          ref={textareaRef}
           placeholder="Ask Nightcode to inspect code, make a plan, or start building..."
           width={66}
           height={5}
           focused
           wrapMode="word"
+          keyBindings={textareaKeyBindings}
+          onSubmit={handleSubmit}
         />
       </box>
     </box>
   );
 }
+

@@ -8,12 +8,14 @@
     "typecheck": "bunx tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@ai-sdk/react": "^3.0.195",
     "@nightcode/shared": "workspace:*",
     "@opentui/core": "latest",
     "@opentui/react": "latest",
-    "hono": "latest",
+    "hono": "4.12.23",
     "react": ">=19.0.0",
-    "react-router": "^7.0.0"
+    "react-router": "^7.0.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@nightcode/server": "workspace:*",
